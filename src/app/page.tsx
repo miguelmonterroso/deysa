@@ -1,101 +1,133 @@
+import { BlurFade } from "@/components/magicui/blur-fade";
+import Banner from "@/components/shared/banner/Banner";
+import Hero from "@/components/shared/hero/Hero";
+import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="text-deysaDark">
+      <BlurFade>
+      <Hero backgroundImage="/heroImage.jpg">
+      Nuestra capacidad para ofrecer <strong>soluciones integrales 
+      y personalizadas</strong> nos permite desarrollar proyectos altamente 
+      competitivos y eficientes para diversas industrias.
+      </Hero>
+      <Banner>
+        <p className="text-center font-thin text-sm p-5">
+          Tenemos presencia en todo <strong>México</strong>, <br />
+          con oficinas en <strong>Querétaro</strong>, <strong>Monterrey</strong>, <strong>CDMX</strong>, <strong>Guadalajara</strong> y <strong>San Luis Potosí</strong>, ofreciendo atención rápida y cercana a nuestros clientes.
+        </p>
+      </Banner>
+      <div className="flex flex-col md:flex-row">
+        <div className="w-full md:w-1/2 p-12">
+          <article className="mb-8">
+            <h2 className="font-bold text-2xl italic">Sobre Nosotros</h2>
+            <p>
+              En Deysa Ingeniería, contamos con más de 10 años de experiencia 
+              brindando soluciones industriales especializadas en aire comprimido, 
+              generación de nitrógeno, cogeneración energética y optimización de 
+              redes industriales. Nuestro enfoque en innovación y eficiencia nos 
+              permite desarrollar proyectos competitivos y personalizados para 
+              diversas industrias.
+            </p>
+          </article>
+          <article className="mb-8">
+            <h2 className="font-bold text-2xl italic">Misión</h2>
+            <p>
+              Ser el socio estratégico de la industria, proporcionando 
+              soluciones innovadoras, eficientes y de alta calidad en 
+              productos y servicios  industriales.
+            </p>
+          </article>
+          <article className="mb-8">
+            <h2 className="font-bold text-2xl italic">Visión</h2>
+            <p>
+              Convertirnos en la empresa líder en desarrollo industrial
+              y tecnológico en México, destacándonos por nuestra 
+              calidad, rapidez y eficiencia en cada proyecto.
+            </p>
+          </article>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="w-full md:w-1/2 flex items-center justify-center p-12">
+          <Image src="/heroImage.jpg" width={500} height={800} alt="hero"/>
+        </div>
+      </div>
+      <Separator className="bg-deysaYellow mb-10"/>
+      <div className="p-12">
+        <h2 className="font-bold text-xl italic mb-4">Nuestros Servicios</h2>
+          <p className="mb-8">
+            En <strong>Deysa Ingeniería ofrecemos soluciones industriales en México</strong> , especializándonos en <strong>aire comprimido, generación de nitrógeno, cogeneración energética y sistemas de enfriamiento.</strong> Contamos con equipos de alta eficiencia para <strong>optimizar procesos industriales, reducir costos y mejorar la productividad</strong>. Brindamos atención en todo el país con un servicio profesional y personalizado. Contáctanos y descubre cómo mejorar el rendimiento de tu industria con tecnología innovadora y sostenible.
+          </p>
+          <div className="h-[400px] bg-gray-300"></div>
+          <p className="mt-8">
+            Brindamos una <strong>amplia gama de productos y servicios</strong> diseñados para mejorar la <strong>eficiencia y productividad</strong> en la industria.
+          </p>
+      </div>
+      <Banner>
+        <Image src='/deysaLogo.png' width={150} height={150} alt="logo"/>
+      </Banner>
+      <Separator className="bg-deysaYellow mb-10"/>
+      <div className="flex flex-col gap-5 md:gap-10">
+        <section className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
+            <h3 className="font-black text-xl italic mb-8"> SOLUCIONES ENERGÉTICAS</h3>
+            <ul className="flex flex-col gap-5 italic">
+              <li>Cogeneración energética</li>
+              <li>Generación de aire comprimido</li>
+              <li>Generación de nitrógeno</li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/2 p-10 mt-[-50px] md:mt-0">
+            <div className="h-[200px] bg-gray-300"></div>
+          </div>
+        </section>
+        <section className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
+            <h3 className="font-black text-xl italic mb-8"> SISTEMAS DE TRANSPORTE Y DISTRIBUCION</h3>
+            <ul className="flex flex-col gap-5 italic">
+              <li>Transportación de multifluidos</li>
+              <li>Diseño y optimización de redes industriales</li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/2 p-10 mt-[-50px] md:mt-0">
+            <div className="h-[200px] bg-gray-300"></div>
+          </div>
+        </section>
+        <section className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
+            <h3 className="font-black text-xl italic mb-8"> TRATAMIENTO Y CONTROL DE FLUIDOS</h3>
+            <ul className="flex flex-col gap-5 italic">
+              <li>Tratamiento de aire</li>
+              <li>Filtración hidráulica</li>
+              <li>Instrumentación para vapor</li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/2 p-10 mt-[-50px] md:mt-0">
+            <div className="h-[200px] bg-gray-300"></div>
+          </div>
+        </section>
+        <section className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
+            <h3 className="font-black text-xl italic mb-8"> AUDITORÍA Y MONITOREO</h3>
+            <ul className="flex flex-col gap-5 italic">
+              <li>Auditorías y monitoreo de redes</li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/2 p-10 mt-[-50px] md:mt-0">
+            <div className="h-[200px] bg-gray-300"></div>
+          </div>
+        </section>
+      </div>
+
+      <Separator className="bg-deysaYellow mt-20"/>
+
+      <p className="text-center p-9">
+        Nuestra capacidad para ofrecer soluciones integrales y personalizadas nos permite desarrollar <br className="hidden md:block" />
+        proyectos altamente competitivos y eficientes para diversas industrias.
+      </p>
+      </BlurFade>
     </div>
   );
 }
