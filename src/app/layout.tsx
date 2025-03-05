@@ -9,9 +9,26 @@ const inter = Inter({ subsets: ['latin'] })
 
 
 export const metadata: Metadata = {
-  title: "Deysa Ingeniería",
-  description: "Deysa Ingeniería Site",
+  title: "Deysa Ingeniería y Servicios",
+  description:
+    "Deysa Ingeniería ofrece soluciones innovadoras en aire comprimido, generación de energía, optimización de procesos y sistemas térmicos. Brindamos equipos industriales de alta calidad y servicios especializados para mejorar la eficiencia y productividad de tu empresa.",
+  openGraph: {
+    title: "Deysa Ingeniería y Servicios",
+    description:
+      "Deysa Ingeniería ofrece soluciones especializadas para la industria, desde sistemas de aire comprimido hasta optimización energética. Descubre cómo podemos mejorar la eficiencia y productividad de tu empresa.",
+    url: "https://deysa.vercel.app",
+    type: "website",
+    images: [
+      {
+        url: "https://deysa.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Deysa Ingeniería y Servicios - Soluciones industriales",
+      },
+    ],
+  },
 };
+
 
 export default function RootLayout({
   children,
