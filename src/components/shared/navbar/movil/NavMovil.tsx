@@ -21,7 +21,9 @@ export default function NavbarMovil(){
     return(
         <Sheet>
             <SheetTrigger className="w-full flex justify-between items-center p-10 sticky top-0 lg:hidden">
-                <Image src="/deysaNav.png" width={150} height={150} alt="logo"/>
+                <Link href="/" className="z-50">
+                    <Image src="/deysaNav.png" width={150} height={150} alt="logo"/>
+                </Link>
                 <Menu/>
             </SheetTrigger>
             <SheetContent className="w-screen h-1/2 bg-deysaDark flex justify-center border-b-4 border-b-deysaYellow text-white">

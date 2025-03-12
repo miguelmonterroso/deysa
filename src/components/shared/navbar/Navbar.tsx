@@ -87,8 +87,10 @@ export default function Navbar() {
     <div>
       <NavbarMovil/>
       <div className="h-[128px] border-b-8 border-b-deysaYellow hidden items-center justify-between p-10 lg:flex sticky top-0 z-30 bg-white">
-      <Image src="/deysaNav.png" width={150} height={150} alt="logo" priority/>
-      <div className="bg-white sticky top-0 hidden md:flex">
+      <Link href="/">
+        <Image src="/deysaNav.png" width={150} height={150} alt="logo" priority/>
+      </Link>
+      <div className="bg-white sticky top-0 hidden md:flex font-bold">
         <NavigationMenu className="text-deysaDark">
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -97,12 +99,7 @@ export default function Navbar() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink>Sobre Nosotros</NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Servicios</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-bold">Servicios</NavigationMenuTrigger>
               <NavigationMenuContent className="flex items-center border-b-8 border-deysaYellow text-deysaDark">
                 <ul className="grid w-[90vw] gap-3 p-4 md:w-[70vw] md:grid-cols-3 lg:w-[83vw] max-w-[1000px]">
                   {components.map((component) => (
@@ -132,7 +129,7 @@ export default function Navbar() {
                 <NavigationMenuLink>Casos de Éxito</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-            <NavigationMenuItem>
+            <NavigationMenuItem className="pr-4">
               <Link href="/blog" legacyBehavior passHref>
                 <NavigationMenuLink>Blog</NavigationMenuLink>
               </Link>
