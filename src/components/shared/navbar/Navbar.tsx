@@ -84,7 +84,7 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 export default function Navbar() {
   return (
-    <div>
+    <div className="sticky top-0 z-30">
       <NavbarMovil/>
       <div className="h-[128px] border-b-8 border-b-deysaYellow hidden items-center justify-between p-10 lg:flex sticky top-0 z-30 bg-white">
       <Link href="/">
@@ -129,7 +129,7 @@ export default function Navbar() {
                 <NavigationMenuLink>Casos de Éxito</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-            <NavigationMenuItem className="pr-4">
+            <NavigationMenuItem className="mr-[32px]">
               <Link href="/blog" legacyBehavior passHref>
                 <NavigationMenuLink>Blog</NavigationMenuLink>
               </Link>

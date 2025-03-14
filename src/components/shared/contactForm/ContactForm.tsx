@@ -55,7 +55,7 @@ export default function ContactForm() {
             </section>
           </div>
           <div className="w-full md:w-1/2 p-8">
-            <h2 className="font-black italic text-xl mt-10">
+            <h2 className="font-black italic text-xl mt-[-20px] lg:mt-10 text-deysaDark mb-4">
               FORMULARIO DE CONTACTO
             </h2>
             <FormComponent />

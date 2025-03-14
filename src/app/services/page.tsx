@@ -104,6 +104,7 @@ export default function Services() {
                 {services.map((service, index) => (
                     <section key={index} className="mt-10 mb-12" id={service.id}>
                         <h3 className="text-2xl font-black italic">{service.name}</h3>
+                        <hr className="mt-[15px] mb-[15px]"/>
                         <p className="mb-5">{service.description}</p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

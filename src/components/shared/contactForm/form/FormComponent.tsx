@@ -2,8 +2,8 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Checkbox } from "@/components/ui/checkbox"
-
+import emailjs from "emailjs-com"; // Importa EmailJS
+import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -21,7 +21,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea"
+import { Textarea } from "@/components/ui/textarea";
+
 const formSchema = z.object({
   name: z.string().min(2, { message: "Ingresa un nombre valido" }).max(50),
   mail: z.string().min(2, { message: "Ingresa un correo valido" }).max(50),
@@ -32,8 +33,7 @@ const formSchema = z.object({
       required_error: "Por favor selecciona una opción.",
     })
     .optional(),
-    human: z.boolean().default(false).optional(),
-
+  human: z.boolean().default(false).optional(),
 });
 
 export default function FormComponent() {
@@ -48,24 +48,30 @@ export default function FormComponent() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const SERVICE_ID = "service_9pq9usb";
+    const TEMPLATE_ID = "template_t1nvcrl";
+    const USER_ID = "oXBOujdOngTecTdiR";
+    try {
+      const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, values, USER_ID);
+      console.log("Email enviado correctamente:", response.status, response.text);
+
+    } catch (error) {
+      console.error("Error al enviar el email:", error);
+    }
   }
+
   return (
     <div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 flex flex-col justify-around gap-5 text-deysaDark">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 lg:space-y-8 flex flex-col justify-around gap-5 text-deysaDark">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input
-                    placeholder="Nombre completo"
-                    {...field}
-                    className="italic"
-                  />
+                  <Input placeholder="Nombre completo" {...field} className="italic" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -77,11 +83,7 @@ export default function FormComponent() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input
-                    placeholder="Correo electrónico"
-                    {...field}
-                    className="italic"
-                  />
+                  <Input placeholder="Correo electrónico" {...field} className="italic" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -89,7 +91,7 @@ export default function FormComponent() {
           />
           <FormField
             control={form.control}
-            name="message"
+            name="tel"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
@@ -104,19 +106,19 @@ export default function FormComponent() {
             name="option"
             render={({ field }) => (
               <FormItem>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Selecciona un servicio" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="m@example.com">m@example.com</SelectItem>
-                    <SelectItem value="m@google.com">m@google.com</SelectItem>
-                    <SelectItem value="m@support.com">m@support.com</SelectItem>
+                    <SelectItem value="m1@example.com">Comercialización de Equipos</SelectItem>
+                    <SelectItem value="m2@google.com">Sistemas Térmicos y Enfriamiento</SelectItem>
+                    <SelectItem value="m3@support.com">Generación y Tratamiento de Aire Comprimido</SelectItem>
+                    <SelectItem value="m4@support.com">Transportación de Multifluídos</SelectItem>
+                    <SelectItem value="m5@support.com">Filtración e Instrumentación</SelectItem>
+                    <SelectItem value="m6@support.com">Generación de Nitrógeno</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -125,7 +127,7 @@ export default function FormComponent() {
           />
           <FormField
             control={form.control}
-            name="tel"
+            name="message"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
@@ -136,25 +138,25 @@ export default function FormComponent() {
             )}
           />
           <FormField
-          control={form.control}
-          name="human"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-center space-x-3 space-y-0 rounded-md border p-4">
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                  className="bg-deysaDark"
-                />
-              </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel className="text-deysaDark font-black italic">
-                  I AM NOT A ROBOT
-                </FormLabel>
-              </div>
-            </FormItem>
-          )}
-        />
+            control={form.control}
+            name="human"
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-center space-x-3 space-y-0 rounded-md border p-4">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                    className="bg-deysaDark"
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel className="text-deysaDark font-black italic">
+                    I AM NOT A ROBOT
+                  </FormLabel>
+                </div>
+              </FormItem>
+            )}
+          />
           <Button
             type="submit"
             className="w-full h-[52px] bg-deysaYellow text-deysaDark font-black italic text-lg hover:bg-amber-300"

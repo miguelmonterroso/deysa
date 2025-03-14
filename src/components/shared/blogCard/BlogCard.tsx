@@ -1,4 +1,6 @@
+import { BlurFade } from "@/components/magicui/blur-fade";
 import Image from "next/image";
+import Link from "next/link";
 
 type BlogCardProps = {
     title: string;
@@ -7,10 +9,15 @@ type BlogCardProps = {
     content: string[];
     imageUrl: string;
     date: string;
+    slug: string;
 };
 
-export default function BlogCard({ title, category, author, content, imageUrl, date }: BlogCardProps) {
+export default function BlogCard({ title, category, author, content, imageUrl, date, slug }: BlogCardProps) {
+    // const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+
     return (
+        <BlurFade inView delay={0.4}>
+        <Link href={`/blog/${slug}`}>
         <div className="text-deysaDark lg:flex lg:items-center mt-5 mb-5">
             <div className="lg:w-1/2 flex flex-col p-4 gap-3 xl:gap-10">
                 <h2 className="font-semibold italic">{title}</h2>
@@ -45,5 +52,7 @@ export default function BlogCard({ title, category, author, content, imageUrl, d
                 </div>
             </div>
         </div>
+        </Link>
+        </BlurFade>
     );
 }
