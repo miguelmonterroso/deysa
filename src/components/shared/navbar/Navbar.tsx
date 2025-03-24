@@ -86,7 +86,7 @@ export default function Navbar() {
   return (
     <div className="sticky top-0 z-30">
       <NavbarMovil/>
-      <div className="h-[128px] border-b-8 border-b-deysaYellow hidden items-center justify-between p-10 lg:flex sticky top-0 z-30 bg-white">
+      <div className="h-auto border-b-4 border-b-deysaYellow hidden items-center justify-between p-5 lg:flex sticky top-0 z-30 bg-white">
       <Link href="/">
         <Image src="/deysaNav.png" width={150} height={150} alt="logo" priority/>
       </Link>
@@ -95,11 +95,11 @@ export default function Navbar() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink>Inicio</NavigationMenuLink>
+                <NavigationMenuLink className="capitalized uppercase">Inicio</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="font-bold">Servicios</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-bold uppercase">Servicios</NavigationMenuTrigger>
               <NavigationMenuContent className="flex items-center border-b-8 border-deysaYellow text-deysaDark">
                 <ul className="grid w-[90vw] gap-3 p-4 md:w-[70vw] md:grid-cols-3 lg:w-[83vw] max-w-[1000px]">
                   {components.map((component) => (
@@ -126,12 +126,12 @@ export default function Navbar() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/cases" legacyBehavior passHref>
-                <NavigationMenuLink>Casos de Éxito</NavigationMenuLink>
+                <NavigationMenuLink className="capitalized uppercase">Casos de Éxito</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem className="mr-[32px]">
               <Link href="/blog" legacyBehavior passHref>
-                <NavigationMenuLink>Blog</NavigationMenuLink>
+                <NavigationMenuLink className="capitalized uppercase">Blog</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>

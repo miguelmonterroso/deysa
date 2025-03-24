@@ -7,7 +7,7 @@ interface BannerProps {
 
 export default function Banner({ children }: BannerProps){
     return(
-        <div className="bg-deysaDark text-white min-h-[80px] flex items-center justify-center">
+        <div className="bg-deysaDark text-white min-h-[40px] flex items-center justify-center ">
             <BlurFade delay={0.3}>
                 {children}
             </BlurFade>

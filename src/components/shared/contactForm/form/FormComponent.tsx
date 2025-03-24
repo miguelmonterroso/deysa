@@ -1,9 +1,9 @@
 "use client";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "emailjs-com"; // Importa EmailJS
-import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -24,19 +24,26 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Ingresa un nombre valido" }).max(50),
-  mail: z.string().min(2, { message: "Ingresa un correo valido" }).max(50),
-  tel: z.string().min(2, { message: "Ingresa un teléfono valido" }).max(50),
-  message: z.string().min(2, { message: "Ingresa un mensaje valido" }).max(100),
+  name: z.string().min(2, { message: "Ingresa un nombre válido" }).max(50),
+  mail: z.string().min(2, { message: "Ingresa un correo válido" }).max(50),
+  tel: z.string().min(2, { message: "Ingresa un teléfono válido" }).max(50),
+  message: z.string().min(2, { message: "Ingresa un mensaje válido" }).max(100),
   option: z
     .string({
       required_error: "Por favor selecciona una opción.",
     })
     .optional(),
-  human: z.boolean().default(false).optional(),
+  captchaInput: z.string().min(1, { message: "Debes ingresar el captcha" }),
 });
 
 export default function FormComponent() {
+  // Genera el captcha aleatorio una sola vez al montar el componente
+  const [captchaString, setCaptchaString] = useState("");
+  useEffect(() => {
+    const randomCaptcha = Math.random().toString(36).substring(2,8).toUpperCase();
+    setCaptchaString(randomCaptcha);
+  }, []);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -44,18 +51,27 @@ export default function FormComponent() {
       mail: "",
       tel: "",
       message: "",
-      human: false,
+      option: "",
+      captchaInput: "",
     },
   });
 
+  // Observar el valor actual del campo captcha
+  const captchaValue = form.watch("captchaInput");
+  const isCaptchaValid = captchaValue === captchaString;
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    // Validación extra en caso de que se intente enviar sin el captcha correcto
+    if (values.captchaInput !== captchaString) {
+      form.setError("captchaInput", { message: "Captcha incorrecto" });
+      return;
+    }
     const SERVICE_ID = "service_9pq9usb";
     const TEMPLATE_ID = "template_t1nvcrl";
     const USER_ID = "oXBOujdOngTecTdiR";
     try {
       const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, values, USER_ID);
       console.log("Email enviado correctamente:", response.status, response.text);
-
     } catch (error) {
       console.error("Error al enviar el email:", error);
     }
@@ -137,28 +153,31 @@ export default function FormComponent() {
               </FormItem>
             )}
           />
+          {/* Captcha: muestra la cadena aleatoria y un input para validarla */}
           <FormField
             control={form.control}
-            name="human"
+            name="captchaInput"
             render={({ field }) => (
-              <FormItem className="flex flex-row items-center space-x-3 space-y-0 rounded-md border p-4">
-                <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                    className="bg-deysaDark"
-                  />
-                </FormControl>
-                <div className="space-y-1 leading-none">
-                  <FormLabel className="text-deysaDark font-black italic">
-                    I AM NOT A ROBOT
-                  </FormLabel>
+              <FormItem className="flex flex-col items-start space-y-2 p-4 border rounded-md">
+                <FormLabel> Escribe los siguientes caracteres: </FormLabel>
+                {/* <span className="text-deysaDark font-black ">
+                </span> */}
+                <div className="flex gap-2">
+                  <Button className="bg-deysaDark" disabled>
+                    {captchaString}
+                  </Button>
+                  <FormControl>
+                    <Input placeholder="Ingresa los caracteres" {...field} className="italic" />
+                  </FormControl>
                 </div>
+                
+                <FormMessage />
               </FormItem>
             )}
           />
           <Button
             type="submit"
+            disabled={!isCaptchaValid}
             className="w-full h-[52px] bg-deysaYellow text-deysaDark font-black italic text-lg hover:bg-amber-300"
           >
             ENVIAR MENSAJE

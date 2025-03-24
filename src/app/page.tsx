@@ -14,7 +14,7 @@ export default function Home() {
       competitivos y eficientes para diversas industrias.
       </Hero>
       <Banner>
-        <p className="text-center font-thin text-sm p-5">
+        <p className="text-center font-normal text-sm p-5">
           Tenemos presencia en todo <strong>México</strong>, <br />
           con oficinas en <strong>Querétaro</strong>, <strong>Monterrey</strong>, <strong>CDMX</strong>, <strong>Guadalajara</strong> y <strong>San Luis Potosí</strong>, ofreciendo atención rápida y cercana a nuestros clientes.
         </p>
@@ -22,7 +22,7 @@ export default function Home() {
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 p-12">
           <article className="mb-8">
-            <h2 className="font-bold text-2xl italic">Sobre Nosotros</h2>
+            <h2 className="font-black text-xl italic uppercase">Sobre Nosotros</h2>
             <p>
               En Deysa Ingeniería, contamos con más de 10 años de experiencia 
               brindando soluciones industriales especializadas en aire comprimido, 
@@ -33,7 +33,7 @@ export default function Home() {
             </p>
           </article>
           <article className="mb-8">
-            <h2 className="font-bold text-2xl italic">Misión</h2>
+            <h2 className="font-black text-xl italic uppercase">Misión</h2>
             <p>
               Ser el socio estratégico de la industria, proporcionando 
               soluciones innovadoras, eficientes y de alta calidad en 
@@ -41,7 +41,7 @@ export default function Home() {
             </p>
           </article>
           <article className="mb-8">
-            <h2 className="font-bold text-2xl italic">Visión</h2>
+            <h2 className="font-black text-xl italic uppercase">Visión</h2>
             <p>
               Convertirnos en la empresa líder en desarrollo industrial
               y tecnológico en México, destacándonos por nuestra 
@@ -56,7 +56,7 @@ export default function Home() {
       </div>
       <Separator className="bg-deysaYellow mb-10"/>
       <div className="p-12">
-        <h2 className="font-bold text-xl italic mb-4">Nuestros Servicios</h2>
+        <h2 className="font-black text-xl italic mb-4 uppercase">Nuestros Servicios</h2>
           <p className="mb-8">
             En <strong>Deysa Ingeniería ofrecemos soluciones industriales en México</strong> , especializándonos en <strong>aire comprimido, generación de nitrógeno, cogeneración energética y sistemas de enfriamiento.</strong> Contamos con equipos de alta eficiencia para <strong>optimizar procesos industriales, reducir costos y mejorar la productividad</strong>. Brindamos atención en todo el país con un servicio profesional y personalizado. Contáctanos y descubre cómo mejorar el rendimiento de tu industria con tecnología innovadora y sostenible.
           </p>
@@ -66,7 +66,7 @@ export default function Home() {
           </p>
       </div>
       <Banner>
-        <Image src='/deysaLogo.png' width={150} height={150} alt="logo"/>
+        <Image src='/deysaLogo.png' width={150} height={150} alt="logo" className="mb-3 mt-3"/>
       </Banner>
       <Separator className="bg-deysaYellow mb-10"/>
       <div className="flex flex-col gap-5 md:gap-10">
