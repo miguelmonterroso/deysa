@@ -10,17 +10,17 @@ const services = [
             {
                 title: 'Chillers de Proceso: ',
                 description: 'Enfriamiento eficiente para procesos industriales.',
-                image: '/box.png'
+                image: '/Generadores/Generadores/chillers.png'
             },
             {
                 title: 'Tuberías de Aluminio para Aire Comprimido y Gases Inertes:',
                 description: 'Conexiones rápidas y certificadas.',
-                image: '/box.png'
+                image: '/Generadores/Generadores/tuberias.png'
             },
             {
                 title: 'Generadores de Nitrógeno:',
                 description: 'Producción interna para reducir costos operativos.',
-                image: '/box.png'
+                image: '/Generadores/Generadores/7.png'
             }
         ]
     },
@@ -32,17 +32,17 @@ const services = [
             {
                 title: 'Chillers Industriales',
                 description: 'de Alta Eficiencia.',
-                image: '/box.png'
+                image: '/Generadores/Generadores/17.png'
             },
             {
                 title: 'Intercambiadores de Calor',
                 description: '(Placas y Tubulares).',
-                image: '/box.png'
+                image: '/Generadores/Generadores/24.png'
             },
             {
                 title: 'Tanques',
                 description: 'para Condensado y Recuperación de Vapor Flash.',
-                image: '/box.png'
+                image: '/Generadores/Generadores/25.png'
             }
         ]
     },
@@ -54,22 +54,22 @@ const services = [
             {
                 title: 'Compresores',
                 description: 'de Aire Industriales.',
-                image: '/box.png'
+                image: '/Generadores/Generadores/26.png'
             },
             {
                 title: 'Filtros OIL-X',
                 description: 'de Alto Rendimiento.',
-                image: '/box.png'
+                image: '/Generadores/Generadores/4.png'
             },
             {
                 title: 'Secadores de Aire',
                 description: '(Desecantes y Refrigerativos).',
-                image: '/box.png'
+                image: '/Generadores/Generadores/28.png'
             },
             {
                 title: 'Sistemas de Monitoreo',
                 description: 'de Calidad del Aire.',
-                image: '/box.png'
+                image: '/Generadores/Generadores/32.png'
             }
         ]
     },
@@ -81,12 +81,12 @@ const services = [
             {
                 title: 'Diseño e Instalación',
                 description: ' de Redes de Tuberías Industriales',
-                image: '/box.png'
+                image: '/Generadores/Generadores/31.png'
             },
             {
                 title: 'Sistemas',
                 description: 'de Distribución de Multifluídos.',
-                image: '/box.png'
+                image: '/Generadores/Generadores/24.png'
             }
         ]
     }

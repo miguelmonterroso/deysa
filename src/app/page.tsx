@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="text-deysaDark">
       <BlurFade>
-      <Hero backgroundImage="/heroImage.jpg">
+      <Hero backgroundImage="/Generadores/Generadores/30.png">
       Nuestra capacidad para ofrecer <strong>soluciones integrales 
       y personalizadas</strong> nos permite desarrollar proyectos altamente 
       competitivos y eficientes para diversas industrias.
@@ -51,7 +51,7 @@ export default function Home() {
 
         </div>
         <div className="w-full md:w-1/2 flex items-center justify-center p-12">
-          <Image src="/heroImage.jpg" width={500} height={800} alt="hero"/>
+          <Image src="/Generadores/Generadores/tuberias.png" width={500} height={800} alt="hero"/>
         </div>
       </div>
       <Separator className="bg-deysaYellow mb-10"/>
@@ -60,7 +60,9 @@ export default function Home() {
           <p className="mb-8">
             En <strong>Deysa Ingeniería ofrecemos soluciones industriales en México</strong> , especializándonos en <strong>aire comprimido, generación de nitrógeno, cogeneración energética y sistemas de enfriamiento.</strong> Contamos con equipos de alta eficiencia para <strong>optimizar procesos industriales, reducir costos y mejorar la productividad</strong>. Brindamos atención en todo el país con un servicio profesional y personalizado. Contáctanos y descubre cómo mejorar el rendimiento de tu industria con tecnología innovadora y sostenible.
           </p>
-          <div className="h-[400px] bg-gray-300"></div>
+          <div className="w-full flex items-center justify-center">
+            <Image src="/Generadores/Generadores/3.png" width={800} height={800} alt="image"/>
+          </div>
           <p className="mt-8">
             Brindamos una <strong>amplia gama de productos y servicios</strong> diseñados para mejorar la <strong>eficiencia y productividad</strong> en la industria.
           </p>
@@ -80,7 +82,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="w-full md:w-1/2 p-10 mt-[-50px] md:mt-0">
-            <div className="h-[200px] bg-gray-300"></div>
+            <Image src="/Generadores/Generadores/electricidad.png" width={300} height={300} alt="productImage"/>
           </div>
         </section>
         <section className="flex flex-col md:flex-row">
@@ -92,7 +94,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="w-full md:w-1/2 p-10 mt-[-50px] md:mt-0">
-            <div className="h-[200px] bg-gray-300"></div>
+            <Image src="/Generadores/Generadores/1.png" width={300} height={300} alt="productImage"/>
           </div>
         </section>
         <section className="flex flex-col md:flex-row">
@@ -105,7 +107,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="w-full md:w-1/2 p-10 mt-[-50px] md:mt-0">
-            <div className="h-[200px] bg-gray-300"></div>
+            <Image src="/Generadores/Generadores/27.png" width={300} height={300} alt="productImage"/>
           </div>
         </section>
         <section className="flex flex-col md:flex-row">
@@ -116,7 +118,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="w-full md:w-1/2 p-10 mt-[-50px] md:mt-0">
-            <div className="h-[200px] bg-gray-300"></div>
+            <Image src="/Generadores/Generadores/32.png" width={300} height={300} alt="productImage"/>
           </div>
         </section>
       </div>
