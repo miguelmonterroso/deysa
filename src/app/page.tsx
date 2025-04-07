@@ -82,7 +82,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="w-full md:w-1/2 p-10 mt-[-50px] md:mt-0">
-            <Image src="/Generadores/Generadores/electricidad.png" width={300} height={300} alt="productImage"/>
+            <Image src="/Generadores/Generadores/Electricidad.png" width={300} height={300} alt="productImage"/>
           </div>
         </section>
         <section className="flex flex-col md:flex-row">
