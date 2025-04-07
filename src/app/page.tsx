@@ -51,7 +51,7 @@ export default function Home() {
 
         </div>
         <div className="w-full md:w-1/2 flex items-center justify-center p-12">
-          <Image src="/Generadores/Generadores/tuberias.png" width={500} height={800} alt="hero"/>
+          <Image src="/Generadores/Generadores/3.png" width={500} height={800} alt="hero"/>
         </div>
       </div>
       <Separator className="bg-deysaYellow mb-10"/>
@@ -61,7 +61,7 @@ export default function Home() {
             En <strong>Deysa Ingeniería ofrecemos soluciones industriales en México</strong> , especializándonos en <strong>aire comprimido, generación de nitrógeno, cogeneración energética y sistemas de enfriamiento.</strong> Contamos con equipos de alta eficiencia para <strong>optimizar procesos industriales, reducir costos y mejorar la productividad</strong>. Brindamos atención en todo el país con un servicio profesional y personalizado. Contáctanos y descubre cómo mejorar el rendimiento de tu industria con tecnología innovadora y sostenible.
           </p>
           <div className="w-full flex items-center justify-center">
-            <Image src="/Generadores/Generadores/3.png" width={800} height={800} alt="image"/>
+            <Image src="/Generadores/Generadores/tuberias.png" width={800} height={800} alt="image"/>
           </div>
           <p className="mt-8">
             Brindamos una <strong>amplia gama de productos y servicios</strong> diseñados para mejorar la <strong>eficiencia y productividad</strong> en la industria.
